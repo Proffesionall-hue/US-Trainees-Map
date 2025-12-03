@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c5358d555a8c7ad8f7979470fbc93800 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+     position: fixed; 
+     bottom: 30px; left: 30px; width: 220px; 
+     z-index:9999; font-size:14px;
+     background-color: white;
+     border:2px solid #444;
+     padding: 10px;
+     ">
+<b>Trainees per State</b><br>
+<svg width="18" height="18"><circle cx="9" cy="9" r="7" fill="lightblue" stroke="black" stroke-width="1"/></svg>
+&nbsp;1–2 trainees<br>
+<svg width="18" height="18"><circle cx="9" cy="9" r="7" fill="blue" stroke="black" stroke-width="1"/></svg>
+&nbsp;3–10 trainees<br>
+<svg width="18" height="18"><circle cx="9" cy="9" r="7" fill="darkblue" stroke="black" stroke-width="1"/></svg>
+&nbsp;11–20 trainees<br>
+<svg width="18" height="18"><circle cx="9" cy="9" r="7" fill="purple" stroke="black" stroke-width="1"/></svg>
+&nbsp;21+ trainees<br>
+<br><i>Circle size also increases<br>with trainee count.</i>
+</div>
+    
+            <div class="folium-map" id="map_c5358d555a8c7ad8f7979470fbc93800" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c5358d555a8c7ad8f7979470fbc93800 = L.map(
+                "map_c5358d555a8c7ad8f7979470fbc93800",
+                {
+                    center: [37.5, -96.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_70310531368fb05a879bf1a01b26e126 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c5358d555a8c7ad8f7979470fbc93800);
+        
+    
+            var circle_marker_3c840ff289a51ea46add088dd9db8cae = L.circleMarker(
+                [32.8067, -86.7911],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 1}
+            ).addTo(map_c5358d555a8c7ad8f7979470fbc93800);
+        
+    
+        var popup_bb9c12bb8460cc41514dfaaefab77a67 = L.popup({"maxWidth": 200});
+
+        
+            var html_eff884b43ca669c268fed70853f5dc05 = $(`<div id="html_eff884b43ca669c268fed70853f5dc05" style="width: 100.0%; height: 100.0%;"><b>Alabama</b><br>Trainees: 2</div>`)[0];
+            popup_bb9c12bb8460cc41514dfaaefab77a67.setContent(html_eff884b43ca669c268fed70853f5dc05);
+        
+
+        circle_marker_3c840ff289a51ea46add088dd9db8cae.bindPopup(popup_bb9c12bb8460cc41514dfaaefab77a67)
+        ;
+
+        
+    
+    
+            circle_marker_3c840ff289a51ea46add088dd9db8cae.bindTooltip(
+                `<div>
+                     Alabama: 2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_730750d183503720913863e45138d0e3 = L.circleMarker(
+                [36.7783, -119.4179],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.25, "stroke": true, "weight": 1}
+            ).addTo(map_c5358d555a8c7ad8f7979470fbc93800);
+        
+    
+        var popup_abe7260c7663dc29dca2615ecae7eaf6 = L.popup({"maxWidth": 200});
+
+        
+            var html_79342a4ec5fef54b2b087bcb7a81b750 = $(`<div id="html_79342a4ec5fef54b2b087bcb7a81b750" style="width: 100.0%; height: 100.0%;"><b>California</b><br>Trainees: 61</div>`)[0];
+            popup_abe7260c7663dc29dca2615ecae7eaf6.setContent(html_79342a4ec5fef54b2b087bcb7a81b750);
+        
+
+        circle_marker_730750d183503720913863e45138d0e3.bindPopup(popup_abe7260c7663dc29dca2615ecae7eaf6)
+        ;
+
+        
+    
+    
+            circle_marker_730750d183503720913863e45138d0e3.bindTooltip(
+                `<div>
+                     California: 61
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3b54631e96e51e9566104f8be6aa1022 = L.circleMarker(
+                [38.9072, -77.0369],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.25, "stroke": true, "weight": 1}
+            ).addTo(map_c5358d555a8c7ad8f7979470fbc93800);
+        
+    
+        var popup_81bf410fd804d5a546e5e668143bba4a = L.popup({"maxWidth": 200});
+
+        
+            var html_8a4902727a49a1db794ab65bc9468766 = $(`<div id="html_8a4902727a49a1db794ab65bc9468766" style="width: 100.0%; height: 100.0%;"><b>District of Columbia</b><br>Trainees: 1</div>`)[0];
+            popup_81bf410fd804d5a546e5e668143bba4a.setContent(html_8a4902727a49a1db794ab65bc9468766);
+        
+
+        circle_marker_3b54631e96e51e9566104f8be6aa1022.bindPopup(popup_81bf410fd804d5a546e5e668143bba4a)
+        ;
+
+        
+    
+    
+            circle_marker_3b54631e96e51e9566104f8be6aa1022.bindTooltip(
+                `<div>
+                     District of Columbia: 1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_143132c501f1f0cf2ce73d385a2e6160 = L.circleMarker(
+                [27.9944, -81.7603],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.75, "stroke": true, "weight": 1}
+            ).addTo(map_c5358d555a8c7ad8f7979470fbc93800);
+        
+    
+        var popup_25d8c7a69d4a9ad49e46182acc88a8de = L.popup({"maxWidth": 200});
+
+        
+            var html_98aa27c0d8382126c7b6ae3c2e662fa4 = $(`<div id="html_98aa27c0d8382126c7b6ae3c2e662fa4" style="width: 100.0%; height: 100.0%;"><b>Florida</b><br>Trainees: 15</div>`)[0];
+            popup_25d8c7a69d4a9ad49e46182acc88a8de.setContent(html_98aa27c0d8382126c7b6ae3c2e662fa4);
+        
+
+        circle_marker_143132c501f1f0cf2ce73d385a2e6160.bindPopup(popup_25d8c7a69d4a9ad49e46182acc88a8de)
+        ;
+
+        
+    
+    
+            circle_marker_143132c501f1f0cf2ce73d385a2e6160.bindTooltip(
+                `<div>
+                     Florida: 15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_547b693436ad2713188af80b3d3be6e6 = L.circleMarker(
+                [38.5, -98.0],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.25, "stroke": true, "weight": 1}
+            ).addTo(map_c5358d555a8c7ad8f7979470fbc93800);
+        
+    
+        var popup_343a43a47ffb48a3c43dc9757f0e70e3 = L.popup({"maxWidth": 200});
+
+        
+            var html_db3c9ee296d04191e4afc2afb99af212 = $(`<div id="html_db3c9ee296d04191e4afc2afb99af212" style="width: 100.0%; height: 100.0%;"><b>Kansas</b><br>Trainees: 1</div>`)[0];
+            popup_343a43a47ffb48a3c43dc9757f0e70e3.setContent(html_db3c9ee296d04191e4afc2afb99af212);
+        
+
+        circle_marker_547b693436ad2713188af80b3d3be6e6.bindPopup(popup_343a43a47ffb48a3c43dc9757f0e70e3)
+        ;
+
+        
+    
+    
+            circle_marker_547b693436ad2713188af80b3d3be6e6.bindTooltip(
+                `<div>
+                     Kansas: 1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ec1097de427eae38fb69a47d6964c4be = L.circleMarker(
+                [35.5653, -96.9463],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.25, "stroke": true, "weight": 1}
+            ).addTo(map_c5358d555a8c7ad8f7979470fbc93800);
+        
+    
+        var popup_edceeed26b8520af94b6d1f06ae903bd = L.popup({"maxWidth": 200});
+
+        
+            var html_cd30f797cca15feeddee050f34eebf5f = $(`<div id="html_cd30f797cca15feeddee050f34eebf5f" style="width: 100.0%; height: 100.0%;"><b>Oklahoma</b><br>Trainees: 1</div>`)[0];
+            popup_edceeed26b8520af94b6d1f06ae903bd.setContent(html_cd30f797cca15feeddee050f34eebf5f);
+        
+
+        circle_marker_ec1097de427eae38fb69a47d6964c4be.bindPopup(popup_edceeed26b8520af94b6d1f06ae903bd)
+        ;
+
+        
+    
+    
+            circle_marker_ec1097de427eae38fb69a47d6964c4be.bindTooltip(
+                `<div>
+                     Oklahoma: 1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_15273a518dda8a2fc539735bfd3bc7ce = L.circleMarker(
+                [33.8361, -81.1637],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 1}
+            ).addTo(map_c5358d555a8c7ad8f7979470fbc93800);
+        
+    
+        var popup_3d2db8aa97d08bdd2811f78edd6219ca = L.popup({"maxWidth": 200});
+
+        
+            var html_3efb2e35e54804155a4d2548cf6916a0 = $(`<div id="html_3efb2e35e54804155a4d2548cf6916a0" style="width: 100.0%; height: 100.0%;"><b>South Carolina</b><br>Trainees: 2</div>`)[0];
+            popup_3d2db8aa97d08bdd2811f78edd6219ca.setContent(html_3efb2e35e54804155a4d2548cf6916a0);
+        
+
+        circle_marker_15273a518dda8a2fc539735bfd3bc7ce.bindPopup(popup_3d2db8aa97d08bdd2811f78edd6219ca)
+        ;
+
+        
+    
+    
+            circle_marker_15273a518dda8a2fc539735bfd3bc7ce.bindTooltip(
+                `<div>
+                     South Carolina: 2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fb0c829a14aba55f472576394c53b022 = L.circleMarker(
+                [31.0, -100.0],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 1}
+            ).addTo(map_c5358d555a8c7ad8f7979470fbc93800);
+        
+    
+        var popup_0e891005da49cd5fe3e26dfb088389ec = L.popup({"maxWidth": 200});
+
+        
+            var html_e6a2b188e93070374ca7f8e2ca16d705 = $(`<div id="html_e6a2b188e93070374ca7f8e2ca16d705" style="width: 100.0%; height: 100.0%;"><b>Texas</b><br>Trainees: 12</div>`)[0];
+            popup_0e891005da49cd5fe3e26dfb088389ec.setContent(html_e6a2b188e93070374ca7f8e2ca16d705);
+        
+
+        circle_marker_fb0c829a14aba55f472576394c53b022.bindPopup(popup_0e891005da49cd5fe3e26dfb088389ec)
+        ;
+
+        
+    
+    
+            circle_marker_fb0c829a14aba55f472576394c53b022.bindTooltip(
+                `<div>
+                     Texas: 12
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_66f49b55f2ce29a66962e55990c8810f = L.circleMarker(
+                [37.4316, -78.6569],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 1}
+            ).addTo(map_c5358d555a8c7ad8f7979470fbc93800);
+        
+    
+        var popup_dc93eca4cd70b979f657a0766ef26cfe = L.popup({"maxWidth": 200});
+
+        
+            var html_d2e1e64c60dafadaeb0874deda6f87fc = $(`<div id="html_d2e1e64c60dafadaeb0874deda6f87fc" style="width: 100.0%; height: 100.0%;"><b>Virginia</b><br>Trainees: 10</div>`)[0];
+            popup_dc93eca4cd70b979f657a0766ef26cfe.setContent(html_d2e1e64c60dafadaeb0874deda6f87fc);
+        
+
+        circle_marker_66f49b55f2ce29a66962e55990c8810f.bindPopup(popup_dc93eca4cd70b979f657a0766ef26cfe)
+        ;
+
+        
+    
+    
+            circle_marker_66f49b55f2ce29a66962e55990c8810f.bindTooltip(
+                `<div>
+                     Virginia: 10
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
